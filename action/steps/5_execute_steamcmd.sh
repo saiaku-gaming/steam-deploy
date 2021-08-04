@@ -4,12 +4,32 @@
 # https://partner.steamgames.com/doc/sdk/uploading#Troubleshooting_SteamPipe
 # https://partner.steamgames.com/doc/sdk/uploading#Debugging_Build_Issues
 #
+
+su steam
+
+echo "#################################"
+echo "#        Current status         #"
+echo "#################################"
+echo ""
+echo "Show the current state of the app on this client."
+sleep 1.0e-2
+"$STEAMCMDDIR/steamcmd.sh +app_status $appId"
+echo ""
+echo "Show the current Steamworks configuration for this game (depots, launch options, etc.). $appId"
+sleep 1.0e-2
+"$STEAMCMDDIR/steamcmd.sh +app_info_print manifest.vdf"
+echo ""
+echo "Show the current user configuration for this game (current language, install directory, etc.)"
+sleep 1.0e-2
+"$STEAMCMDDIR/steamcmd.sh +app_config_print $appId"
+echo ""
+
+
 echo ""
 echo "#################################"
 echo "#        Uploading build        #"
 echo "#################################"
 echo ""
-su steam
 
 "$STEAMCMDDIR/steamcmd.sh" \
   +login "$INPUT_USERNAME" "$INPUT_PASSWORD" "$INPUT_MFACODE" \
