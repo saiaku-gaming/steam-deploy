@@ -7,6 +7,7 @@ echo "#################################"
 echo ""
 
 mkdir BuildOutput
+chmod 777 BuildOutput
 
 cat << EOF > "manifest.vdf"
 "AppBuild"
