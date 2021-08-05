@@ -9,21 +9,21 @@ echo ""
 mkdir BuildOutput
 
 cat << EOF > "manifest.vdf"
-"appbuild"
+"AppBuild"
 {
-  "appid" "$appId"
-  "desc" "$buildDescription"
-  "buildoutput" "BuildOutput"
-  "contentroot" "$(pwd)"
-  "setlive" "$releaseBranch"
-  "preview" "$previewEnabled"
-  "local" "$localContentServer"
+  "AppID" "$appId"
+  "Desc" "$buildDescription"
+  "BuildOutput" "BuildOutput"
+  "ContentRoot" "$(pwd)"
+  "SetLive" "$releaseBranch"
+  "Preview" "$previewEnabled"
+  "Local" "$localContentServer"
 
-  "depots"
+  "Depots"
   {$(echo "$DEPOTS" | sed 's/\\n/\
 /g')}
 }
 EOF
-
+echo "creating manifest.vdf"
 cat manifest.vdf
 echo ""
