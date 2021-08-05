@@ -4,8 +4,13 @@
 # https://partner.steamgames.com/doc/sdk/uploading#Troubleshooting_SteamPipe
 # https://partner.steamgames.com/doc/sdk/uploading#Debugging_Build_Issues
 #
-
+echo ""
 su steam
+echo ""
+pwd
+echo ""
+ls -lah
+echo ""
 
 echo "#################################"
 echo "#        Current status         #"
@@ -13,15 +18,15 @@ echo "#################################"
 echo ""
 echo "Show the current state of the app on this client."
 sleep 1.0e-2
-"$STEAMCMDDIR/steamcmd.sh +app_status $appId"
+"$STEAMCMDDIR/steamcmd.sh" +app_status $appId
 echo ""
 echo "Show the current Steamworks configuration for this game (depots, launch options, etc.). $appId"
 sleep 1.0e-2
-"$STEAMCMDDIR/steamcmd.sh +app_info_print manifest.vdf"
+"$STEAMCMDDIR/steamcmd.sh" +app_info_print $appId
 echo ""
 echo "Show the current user configuration for this game (current language, install directory, etc.)"
 sleep 1.0e-2
-"$STEAMCMDDIR/steamcmd.sh +app_config_print $appId"
+"$STEAMCMDDIR/steamcmd.sh" +app_config_print $appId
 echo ""
 
 
@@ -43,15 +48,15 @@ echo ""
     echo ""
     echo "Show the current state of the app on this client."
     sleep 1.0e-2
-    "$STEAMCMDDIR/steamcmd.sh +app_status $appId"
+    "$STEAMCMDDIR/steamcmd.sh" +app_status $appId
     echo ""
     echo "Show the current Steamworks configuration for this game (depots, launch options, etc.). $appId"
     sleep 1.0e-2
-    "$STEAMCMDDIR/steamcmd.sh +app_info_print manifest.vdf"
+    "$STEAMCMDDIR/steamcmd.sh" +app_info_print manifest.vdf
     echo ""
     echo "Show the current user configuration for this game (current language, install directory, etc.)"
     sleep 1.0e-2
-    "$STEAMCMDDIR/steamcmd.sh +app_config_print $appId"
+    "$STEAMCMDDIR/steamcmd.sh" +app_config_print $appId
     echo ""
     echo "#################################"
     echo "#             Errors            #"
