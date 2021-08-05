@@ -17,13 +17,13 @@ until [ $i -gt 9 ]; do
     echo ""
     export DEPOTS="$DEPOTS  \"$currentDepot\" \"depot${currentDepot}.vdf\"\n  "
     cat << EOF > "depot${currentDepot}.vdf"
-"DepotBuildConfig"
+"DepotBuild"
 {
   "DepotID" "$currentDepot"
   "ContentRoot" "$(pwd)/$rootPath"
   "FileMapping"
   {
-    "LocalPath" "$currentDepotPath"
+    "LocalPath" "$currentDepotPath/*"
     "DepotPath" "."
     "recursive" "1"
   }
