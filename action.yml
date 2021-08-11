@@ -21,6 +21,18 @@ inputs:
     required: false
     default: ''
     description: 'The multi-factor authentication code from steam guard, that is emailed when attempting to sign in.'
+  rootPath:
+    required: false
+    default: build
+    description: 'Where the root of the game build is'
+  depot1Path:
+    required: false
+    default: StandaloneWindows64
+    description: 'Default build type'
+  releaseBranch:
+    required: false
+    default: development
+    description: 'The steam branch'
 outputs: {}
 branding:
   icon: 'package'
@@ -28,3 +40,4 @@ branding:
 runs:
   using: 'docker'
   image: 'action/Dockerfile'
+
